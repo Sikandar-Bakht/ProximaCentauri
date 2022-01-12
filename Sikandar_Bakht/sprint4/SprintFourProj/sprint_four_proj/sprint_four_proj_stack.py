@@ -108,11 +108,13 @@ class SprintFourProjStack(cdk.Stack):
         ##                                      Deploying to AWS Amplify                                                   ##
         #####################################################################################################################
         
-        amplify_app = amplify.App(self, "MyApp",
+        amplify_app = amplify.App(self, "SikandarS4ReactApp",
                                 source_code_provider=amplify.GitHubSourceCodeProvider(
                                     owner="Sikandar-Bakht",
                                     repository="skipq_react_app",
-                                    oauth_token=cdk.SecretValue.secrets_manager("Sikandar/github/token")))
+                                    oauth_token=cdk.SecretValue.secrets_manager("Sikandar/github/token")),
+                                    basic_auth=amplify.BasicAuth.from_generated_password("Sikandar"))
+        amplify_app.add_environment(name='ENDPOINT', value=monitor_api.url)
         main = amplify_app.add_branch("main")
         #####################################################################################################################
         ##                                      Creating Cloudwatch Metrics                                                ##

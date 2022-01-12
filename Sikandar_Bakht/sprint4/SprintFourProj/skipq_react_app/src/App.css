@@ -1,0 +1,136 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: rgb(16, 44, 206);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.react-pagination-table {
+  position: relative;
+  justify-content: center;
+  border-radius: 3px;
+  background: #d37d7d;
+  margin-bottom: 100px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.react-pagination-table__sub-title {
+  float: right;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.react-pagination-table__title,
+.react-pagination-table__sub-title {
+  display: inline-block;
+  font-size: 18px;
+  margin: 0;
+  line-height: 1;
+  font-weight: 100;
+  padding: 20px 20px 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.react-pagination-table__header {
+  background: #942828;
+}
+
+.react-pagination-table__table {
+  text-align: center;
+  position: relative;
+  width: 80%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #ddd;
+}
+
+.react-pagination-table__item {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pagination-status {
+  position: relative;
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pagination-status__item {
+  display: inline;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pagination-status .pagination-status__btn {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pagination-status .pagination-status__btn:focus {
+  outline: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pagination-status .pagination-status__btn--active,
+.pagination-status .pagination-status__btn:hover {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+  cursor: pointer;
+}
+
+.pagination-status .pagination-status__btn--disable,
+.pagination-status .pagination-status__btn--disable:hover {
+  color: #d0d0d0;
+  cursor: default;
+  border-color: #d0d0d0;
+  background-color: #fff;
+}
