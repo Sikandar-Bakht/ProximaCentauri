@@ -12,7 +12,8 @@ def lambda_handler(event, context):
     
     path = event['path']
     httpMethod = event['httpMethod']
-    origin = event['headers']['origin']
+    if origin in event['headers']:
+        origin = event['headers']['origin']
     body = event['body']
     table_name = os.getenv("api_table_name")
     print(event)
