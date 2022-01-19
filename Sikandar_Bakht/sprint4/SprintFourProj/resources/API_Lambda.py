@@ -12,6 +12,7 @@ def lambda_handler(event, context):
     
     path = event['path']
     httpMethod = event['httpMethod']
+    origin = None
     if origin in event['headers']:
         origin = event['headers']['origin']
     body = event['body']
@@ -22,17 +23,16 @@ def lambda_handler(event, context):
         
         bucket_name = event['queryStringParameters']["bucket_name"]
         object_key = event['queryStringParameters']["object_key"]
-        response = bucket_to_table(bucket_name, object_key, table_name)
+        response = bucket_to_table(bucket_name, object_key, table_name, origin)
         
     elif path == TABLE_PATH and httpMethod == 'GET':
         
         if event['queryStringParameters'] is not None:
             url = event['queryStringParameters']['url']
-            response = fetch_url(table_name, url)
+            response = fetch_url(table_name, origin, url)
             print(response, origin)
         else:
-            response = fetch_url(table_name)
-            print(response, origin)
+            response = fetch_url(table_name, origin)
         
     elif path == TABLE_PATH and httpMethod == 'POST':
         
@@ -98,7 +98,7 @@ def construct_response(msg, origin=None):
     return response
 
 
-def bucket_to_table(bucket_name, object_key, table_name):
+def bucket_to_table(bucket_name, object_key, table_name, origin):
     '''
     
     RESPONSE OF LOADING URLS FROM BUCKET
@@ -125,11 +125,11 @@ def bucket_to_table(bucket_name, object_key, table_name):
                                 'Name': K[i]})
     
     msg = f"{len(K)} urls added/updated"
-    return construct_response(msg)
+    return construct_response(msg, origin)
 
 
 
-def fetch_url(table_name, url=None):
+def fetch_url(table_name, origin, url=None):
     '''
     
     RESPONSE OF READING URLS FROM TABLE
@@ -172,7 +172,7 @@ def fetch_url(table_name, url=None):
                         "URL": URL[i]['URL']
                       })
                     
-    return construct_response(json.dumps(URL))
+    return construct_response(json.dumps(URL), origin)
         
         
 
