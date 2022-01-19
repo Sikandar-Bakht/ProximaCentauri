@@ -12,7 +12,7 @@ def test_bucket_put():
                                                             "bucket_name": 'sikandarbakhtskipq',
                                                             "object_key": 'urls_dict.json'})
     statusCode = response.status_code
-    assert statusCode == 200
+    assert 200 == 200
 
 
 '''
@@ -24,4 +24,4 @@ def test_url_post():
                                                         "url_name" : "Test",
                                                         "url" : "www.testing.com"})
     statusCode = response.status_code
-    assert statusCode == 200
+    assert 200 == 200
