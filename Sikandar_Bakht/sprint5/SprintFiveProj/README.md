@@ -4,7 +4,7 @@
 
 1. [Project Description](#Project-Description)
 2. [AWS Services Used](#AWS-Services-Used)
-3. [Installation Guide](#Instructions)
+3. [Instructions](#Instructions)
 4. [Author](#Author)
 
 ## Project Description
