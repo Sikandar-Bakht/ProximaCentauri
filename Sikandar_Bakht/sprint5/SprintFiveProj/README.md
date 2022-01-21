@@ -1,5 +1,5 @@
 
-# Sprint 3: Querying Backend API via static React Web App
+# Sprint 5: API Functional and Security testing via containerized test clients deployed on AWS ECS
 ## Table of Contents
 
 1. [Project Description](#Project-Description)
@@ -13,14 +13,16 @@ Using a static React Web App, display the list of URLs supporting pagination of 
 
 ## AWS Services Used
 
-1. AWS Lambda
-2. AWS DynamoDB
+1. AWS ECS
+2. AWS ECR
 3. AWS API Gateway
-4. AWS Code Deploy
-5. AWS Pipeline
-6. AWS Amplify
-7. AWS Cognito
-8. React JS
+4. AWS Pipeline
+5. AWS Events
+6. AWS Fargate
+7. Docker
+8. PyRestTest
+9. Syntribos
+
 
 ## Instructions:
 
@@ -32,11 +34,11 @@ To get this repo up and running follow these steps:
 
 2. cd to the project directory using this command:
 
-	   cd ./ProximaCentauri/Sikandar_Bakht/sprint3/SprintThreeProj
+	   cd ./ProximaCentauri/Sikandar_Bakht/sprint5/SprintFiveProj
 
 3. (Optional) Bootstrap the environment by running the following command.
 
-		cdk bootstrap --qualifier "sikandars3" --toolkit-stack-name "sikandartoolkit" --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess 315997497220/us-east-2
+		cdk bootstrap --qualifier "sikandars5" --toolkit-stack-name "sikandartoolkit" --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess 315997497220/us-east-1
   
     The `qualifier` and `toolkit-stack-name` are variable parameters, you can change them to whatever you like. If you change qualifier name, change the same in `cdk.json` file
     in the project directory as well.
@@ -47,11 +49,8 @@ To get this repo up and running follow these steps:
        
 5. Manually approve the prod stage in CodePipeline
        
-6. The pipeline is created and two stacks by names starting with 'beta' and 'prod' are created. Go to AWS API Gateway and search for API with the query 'Sikandar';
-   two of them should come up.
-
+6. The pipeline is created and two stacks by names starting with 'beta' and 'prod' are created. 
 7. Select first one, go to stages in the left hand menu and copy the URL endpoint displayed.
-8. Go to your favorite API tester (I use Postman) and try any of the methods in the repo.
 
 ## Author
 
