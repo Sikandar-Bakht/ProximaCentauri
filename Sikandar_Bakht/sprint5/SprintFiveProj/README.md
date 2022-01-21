@@ -9,7 +9,7 @@
 
 ## Project Description
 
-Using a static React Web App, display the list of URLs supporting pagination of items. The front-end web app should be able to continuously deploy (CD) and it should provide a way to authenticate users via AWS Cognito. Successfully implemented the web app while incorporating the functionality from previous sprint.
+Building Docker containers for difficult to setup test clients like pyRestTest and Syntribos. Publish Docker image to AWS ECR and deploy the registered image via AWS ECS using either AWS EC2 or AWS Fargate. Deploy the ECS task as part of testing stage in Code Pipeline.
 
 ## AWS Services Used
 
